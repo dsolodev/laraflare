@@ -1,0 +1,58 @@
+{
+  "name": "dsolodev/laraflare",
+  "description": "Cloudflare Client API v4 for Laravel",
+  "type": "library",
+  "keywords": [
+    "cloudflare",
+    "laravel",
+    "sdk",
+    "api",
+    "v4"
+  ],
+  "version": "1.0.0",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "JC",
+      "email": "jc@dsolo.dev"
+    }
+  ],
+  "require": {
+    "php": "^8.4",
+    "guzzlehttp/guzzle": "^7.0",
+    "guzzlehttp/psr7": "^2.0",
+    "illuminate/support": "^11.0"
+  },
+  "require-dev": {
+    "rector/rector": "^2.1",
+    "phpstan/phpstan": "^2.1",
+    "laravel/pint": "^1.25"
+  },
+  "autoload": {
+    "psr-4": {
+      "dsolodev\\Cloudflare\\": "src/"
+    }
+  },
+  "scripts": {
+    "lint": "pint",
+    "refactor": "rector",
+    "test:lint": "pint --test",
+    "test:types": "phpstan",
+    "test:refactor": "rector --dry-run",
+    "test": [
+      "@test:lint",
+      "@test:types",
+      "@test:refactor"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "dsolodev\\Cloudflare\\Providers\\CloudflareServiceProvider"
+      ],
+      "aliases": {
+        "Cloudflare": "dsolodev\\Cloudflare\\Facades\\Cloudflare"
+      }
+    }
+  }
+}
