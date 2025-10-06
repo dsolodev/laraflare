@@ -54,5 +54,7 @@
         "Cloudflare": "dsolodev\\Cloudflare\\Facades\\Cloudflare"
       }
     }
-  }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
 }
